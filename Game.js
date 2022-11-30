@@ -1,9 +1,10 @@
 const Temperature = document.querySelector(".Temperature");
 const DescriptionDOM = document.querySelector(".Description");
-const CityName = document.querySelector(".Location-Name");
+const Location = document.querySelector(".Location");
 const WS = document.querySelector(".WindSpeed");
 const IconIMG = document.querySelector(".Icon-IMG")
-const Time = document.querySelector(".Time")
+const H_L = document.querySelector(".H-L")
+const FeelsLikeDOM = document.querySelector(".FeelsLikeTemp")
 window.addEventListener("load", () => {
 
 let long;
@@ -18,22 +19,24 @@ navigator.geolocation.getCurrentPosition(position =>{
 
     console.log(long);
     console.log(lat);
-    const api = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${long}&key=5f4e6265aafe44b8a7bf0bc239944a37&include=hourly`;
+    const api = `http://api.weatherapi.com/v1/forecast.json?key=bbf338ba66b347e6972174240222911&q=${lat} ${long}&days=3&aqi=yes&alerts=no`;
     fetch(api)
     
         .then(data => data.json())
         .then(data => {
 
-        console.log(data) 
-        const { timezone , temp, weather , city_name, wind_spd , ob_time} = data.data[0]
-        console.log(weather.description)
-        console.log(temp)
-        WS.textContent = "Wind speed: "+ wind_spd + "km/h"
-        CityName.textContent = city_name 
-        DescriptionDOM.textContent = weather.description
-        Temperature.textContent = temp + " C"
-        IconIMG.src = `https://www.weatherbit.io/static/img/icons/${weather.icon}.png`
-        Time.textContent = "Time: " + ob_time
+        console.log(data) ;
+        const {current , forecast} = data;
+        const {forecastday} = forecast;
+        const {temp_c , humidity , feelslike_c, condition} = current;
+        const {text} = condition
+        const {day} = forecastday[0]
+        const {maxtemp_c} = day
+        const {mintemp_c} = day
+        FeelsLikeDOM.textContent = feelslike_c + "°"
+        DescriptionDOM.textContent = text  
+        H_L.textContent = "H:" + maxtemp_c +"°" + " L:" + mintemp_c + "°"
+        Temperature.textContent = temp_c + "°C";
 })
         .catch(err => console.error(err));
         

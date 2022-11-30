@@ -1,19 +1,35 @@
 <html>
     <head>
 <title>Uno Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-   <div class="CardContainer">
-    <div class="Location">
-        <p class="Location-Name">Chisinau</p>
-    <div class="Icon"><img class="Icon-IMG"></div>
-    </div>
-    
-    <p class="Temperature"></p>
-    <p class="WindSpeed"></p>
-    <p class="Description">Description</p>
-    <p class="Time"></p>
+   <div class="CardContainer-Grid">
+   <div class="Summary-Container Span-2">
+
+<p class="Location">Chisinau</p>
+<p class="Temperature">&deg;C</p>
+<p class="Description">Cloudy</p>
+<p class="H-L"> H:3 C  L:-1 C</p>
+   </div>
+   <div class="Hourly-Container Span-3"> Hourly</div>
+   <div class="Forecast-Container Span-2"> Forecast</div>
+   <div class="Precipitation-Container Span-2"> Precipitation</div>
+   <div class="FeelsLike-Container SquareContainer"> 
+    <div class="SquareContainerHeader"> FEELS LIKE</div>
+    <p class="FeelsLikeTemp">-1°</p>
+   </div>
+   <div class="FeelsLike-Container SquareContainer"> 
+    <div class="SquareContainerHeader"> WIND </div>
+    <p class="WindSpeed">8<br>km/h<br>NE</p>
+   </div>
+   <div class="FeelsLike-Container SquareContainer"> Precipitation</div>
+   <div class="FeelsLike-Container SquareContainer"> Humidity</div>
+   <div class="FeelsLike-Container SquareContainer"> UV index</div>
+   <div class="FeelsLike-Container SquareContainer"> SunRise/Sunset</div>
+   <div class="FeelsLike-Container SquareContainer"> Visibility</div>
+   <div class="FeelsLike-Container SquareContainer"> Pressure</div>
    </div>
 
         <script src="Game.js"></script>
