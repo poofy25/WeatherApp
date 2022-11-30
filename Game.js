@@ -19,7 +19,7 @@ navigator.geolocation.getCurrentPosition(position =>{
 
     console.log(long);
     console.log(lat);
-    const api = `http://api.weatherapi.com/v1/forecast.json?key=bbf338ba66b347e6972174240222911&q=${lat} ${long}&days=3&aqi=yes&alerts=no`;
+    const api = `https://api.weatherapi.com/v1/forecast.json?key=bbf338ba66b347e6972174240222911&q=${lat} ${long}&days=3&aqi=yes&alerts=no`;
     fetch(api)
     
         .then(data => data.json())
