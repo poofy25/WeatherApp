@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
 <title>Uno Project</title>
@@ -12,17 +13,52 @@
 <p class="Temperature">&deg;C</p>
 <p class="Description">Cloudy</p>
 <p class="H-L"> H:3 C  L:-1 C</p>
+<p class="LastUpdate" style="font-size:clamp(10px,4vw,20px); margin: 0;">Last Updated: 2022-12-01 19:15</p>
    </div>
    <div class="Hourly-Container Span-3"> Hourly</div>
    <div class="Forecast-Container Span-2"> Forecast</div>
-   <div class="Precipitation-Container Span-2"> Precipitation</div>
+   <div class="Precipitation-Container Span-2">
+    <div class="Precipitation-Header">
+        <img src="PNGS/Precipitation-WaterIcon.png" class="SquareHeaderIcon">
+        PRECIPITATION</div>
+
+<div class="Precipitation-Grid">
+<div class="Precipitation-Day" id="Precipitation-Day">
+    <p>Today</p>
+    <img src="PNGS/Precipitation-RainingIcon.png">
+        <p class="stRainChance"> :0%</p>
+        <img src="PNGS/Precipitation-SnowingIcon.png">
+    <p class="stSnowChance"> 2%</p>
+    
+</div>
+<div class="Precipitation-Day">
+    <p>2 Dec</p>
+    <img src="PNGS/Precipitation-RainingIcon.png">
+    <p class="ndRainChance">:0% </p>
+    <img src="PNGS/Precipitation-SnowingIcon.png">
+<p class="ndSnowChance"> :80%</p>
+</div>
+<div class="Precipitation-Day" style="   border-bottom: 1px solid white;">
+    <p>3 Dec</p>
+    <img src="PNGS/Precipitation-RainingIcon.png">
+    <p class="rdRainChance">:0%</p>
+    <img src="PNGS/Precipitation-SnowingIcon.png">
+<p  class="rdSnowChance">:80%</p>
+</div>
+</div>
+
+    </div>
    <div class="FeelsLike-Container SquareContainer"> 
-    <div class="SquareContainerHeader"> FEELS LIKE</div>
+    <div class="SquareContainerHeader">
+        <img src="PNGS/FeelsLike-Termometer.png" class="SquareHeaderIcon">
+        FEELS LIKE</div>
     <p class="FeelsLikeTemp">-1°</p>
    </div>
    <div class="FeelsLike-Container SquareContainer"> 
-    <div class="SquareContainerHeader"> WIND </div>
-    <p class="WindSpeed">8<br>km/h<br>NE</p>
+    <div class="SquareContainerHeader"> 
+        <img src="PNGS/Wind-WindIcon.png" class="SquareHeaderIcon">
+        WIND </div>
+    <p class="WindSpeed">8km/h<br>NE</p>
    </div>
    <div class="FeelsLike-Container SquareContainer"> Precipitation</div>
    <div class="FeelsLike-Container SquareContainer"> Humidity</div>

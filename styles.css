@@ -1,26 +1,13 @@
 body{
     color: white;
-    background-image: linear-gradient(rgb(39, 63, 167),rgb(77, 89, 143));
+    background-image: linear-gradient(rgb(88, 111, 146),rgb(32,36,45));
     padding: 0;
     padding-bottom: 10vh;
     font-family: monospace;
-    font-size: 2rem;
+    font-size: 1em;
 }
-
-
-.SquareContainer{
-    border-radius: 30px;
-    height: 0.5fr;
-        
-    display: flex;
-    flex-direction: column;
-   padding: 20px;
-}
-.SquareContainerHeader{
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.5);
-}
-    .CardContainer-Grid{
+/*GRID*/
+.CardContainer-Grid{
         box-sizing: border-box;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -34,53 +21,153 @@ body{
            
     
     }
-    .CardContainer-Grid > div{
+.CardContainer-Grid > div{
         border-radius: 30px;
-        backdrop-filter: blur(20px);
+        
         display: flex;
         align-items: center;
+        overflow: hidden;
+}
+    /*CONTAINERS*/
+.SquareContainer{
+        border-radius: 30px;
+        height: 0.5fr;
+            
+        display: flex;
+        flex-direction: column;
+       padding: 20px;
+       padding-top: 10px;
+       aspect-ratio: 1;
     }
+.SquareContainerHeader{
+        font-weight: bolder;
+        color: rgba(113,121,134);
+        font-size: clamp(15px,4vw,30px);
+        text-align: start;
+        display: flex;
+        justify-self: start;
+        align-items:center;
+        flex-direction: row;
+        margin-right: auto;
+        margin-left:2.5vw;
+}
+.SquareHeaderIcon{
+    filter: contrast(0%);
+    width: 5vw;
+    aspect-ratio: 1;
+    margin-right: 2vw;
+}
     /*Summary Container*/
-    .Summary-Container{
+.Summary-Container{
         background-color: transparent;
-        height: 30vh;
+        height: 35vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .Summary-Container > p{
+}
+
+.Summary-Container > p{
         margin: 0.5rem;
-    }
-    .Summary-Container .Location{
-        font-size: 3rem;
-    }
-    .Summary-Container .Temperature{
-        font-size: 5rem;
+        font-size: clamp(20px,8vw,25px);
+}
+.Summary-Container .Location{
+        font-size: clamp(25px,10vw,50px);
+}
+.Summary-Container .Temperature{
+        font-size: clamp(30px,15vw,50px);
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+}
+
+
     /*Hourly container*/
-    .Hourly-Container{
-        background-color: rgba(0, 0, 145,0.5);
+.Hourly-Container{
+        background-color: rgba(6, 25, 59, 0.5);
+        border: 1px solid rgba(110, 119, 136, .4);
         height: 20vh;
     }
     .Forecast-Container{
-        background-color: rgba(0, 0, 145,0.5);
+        background-color: rgba(6, 25, 59, 0.5);
+        border: 1px solid rgba(110, 119, 136, .4);
         height: 25vh;
     }
     .Precipitation-Container{
-        background-color: rgba(0, 0, 145,0.5);
-        height:20vh;
-     
+        overflow: scroll;
+        background-color: rgba(6, 25, 59, 0.5);
+        border: 1px solid rgba(110, 119, 136, .4);
+        height:30vh;
+        display: flex;
+        flex-direction: column;
+        padding: 5vw;
+        padding-top: 2.5vw;
+    }
+    .Precipitation-Header{
+        font-weight: bolder;
+        color: rgba(113,121,134);
+        font-size: clamp(20px,4vw,30px);
+        text-align: start;
+        display: flex;
+        justify-self: start;
+        margin-right: auto;
+        margin-left:0;
+    }
+    .Precipitation-Grid{
+        text-align: start;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        padding-left: 5vw;
+        padding-top: 2.5vw;
+        padding-right: 5vw;
+
+    }
+    .Precipitation-Day{
+    display: flex;
+    flex-direction: row;
+    
+    }
+    .Precipitation-Day > p {
+        font-size: clamp(10px,6vw,40px);
+        font-weight: bolder;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+    }
+    .Precipitation-Day img{
+       width: clamp(20px,10vw,50px);
+       aspect-ratio:1;
+       filter:invert();
+    }
+    .Precipitation-Grid > div {
+        box-sizing: border-box;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-top: .25px solid white;
+        width: 100%;
+        
     }
     /*FeelsLike Container*/
     .FeelsLike-Container{
-        background-color: rgba(0, 0, 145,0.5);
+        background-color: rgba(6, 25, 59, 0.5);
+        border: 1px solid rgba(110, 119, 136, .4);
         
     }
     .FeelsLike-Container .FeelsLikeTemp{
         margin: auto;
-        font-size: 5rem;
+        font-size: clamp(20px,8vw,60px);
+        font-weight: bolder;
     }
+    .WindSpeed{
+        margin: auto;
+        font-size: clamp(15px,7vw,60px);
+        font-weight: bolder;
+        text-align: center;
+    }
+
+
     @media screen and (max-width:767px){
         .Span-2{
             grid-column: span 2;
@@ -89,6 +176,8 @@ body{
          grid-column: span 2;
         }
     }
+
+    /*FOR DESKTOP*/
     @media screen and (min-width:768px) {
    
         .CardContainer-Grid{
@@ -122,4 +211,3 @@ body{
             background-color: red;
         }
     }
-
