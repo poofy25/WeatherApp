@@ -6,14 +6,16 @@ const IconIMG = document.querySelector(".Icon-IMG")
 const H_L = document.querySelector(".H-L")
 const FeelsLikeDOM = document.querySelector(".FeelsLikeTemp")
 const WS = document.querySelector(".WindSpeed");
+//PRECIPTATION
+const FirstRainChanceDOM = document.querySelector(".stRainChance");
+        const FirstSnowChanceDOM = document.querySelector(".stSnowChance");
+        const SecondRainChanceDOM = document.querySelector(".ndRainChance");
+        const SecondSnowChanceDOM = document.querySelector(".ndSnowChance");
+        const ThirdRainChanceDOM = document.querySelector(".rdRainChance");
+        const ThirdSnowChanceDOM = document.querySelector(".rdSnowChance");
 
-const FirstRainChanceDOM = document.querySelector(".stRainChance")
-        const FirstSnowChanceDOM = document.querySelector(".stSnowChance")
-        const SecondRainChanceDOM = document.querySelector(".ndRainChance")
-        const SecondSnowChanceDOM = document.querySelector(".ndSnowChance")
-        const ThirdRainChanceDOM = document.querySelector(".rdRainChance")
-        const ThirdSnowChanceDOM = document.querySelector(".rdSnowChance")
-
+const PrecipitationDay1DOM = document.querySelector(".Precipitation-Day-NumberOne");
+const PrecipitationDay2DOM = document.querySelector(".Precipitation-Day-NumberTwo");
 
 window.addEventListener("load", () => {
 
@@ -42,7 +44,16 @@ navigator.geolocation.getCurrentPosition(position =>{
         const First_FC = forecastday[0].day
         const Second_FC = forecastday[1].day
         const Third_FC = forecastday[2].day
-        console.log(forecastday) 
+        
+        let day1dateraw = forecastday[1].date 
+        let day2dateraw = forecastday[2].date 
+        const day1dateArray = day1dateraw.split("-");
+        const day2dateArray = day2dateraw.split("-");
+        
+       
+        const months = ["None" , "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"];
+       console.log(day1dateArray[1])
+        console.log(months[day1dateArray[1]])
 
         //Precipitation Forecast
 
@@ -65,7 +76,10 @@ navigator.geolocation.getCurrentPosition(position =>{
         SecondSnowChanceDOM.textContent =":" + SecondSnowChance + "%"
         ThirdRainChanceDOM.textContent =":" + ThirdRainChance + "%"
         ThirdSnowChanceDOM.textContent =":" + ThirdSnowChance + "%"
-console.log(FirstSnowChanceDOM , FirstRainChance)
+
+        PrecipitationDay1DOM.textContent = day1dateArray[2][1] + " " + months[day1dateArray[1]] 
+        PrecipitationDay2DOM.textContent = day2dateArray[2][1] + " " + months[day2dateArray[1]]
+
 
 
 //Current Time Data

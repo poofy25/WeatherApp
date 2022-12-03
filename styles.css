@@ -22,11 +22,10 @@ body{
     
     }
 .CardContainer-Grid > div{
-        border-radius: 30px;
+        border-radius: 7.5vw;
         
         display: flex;
         align-items: center;
-        overflow: hidden;
 }
     /*CONTAINERS*/
 .SquareContainer{
@@ -38,6 +37,7 @@ body{
        padding: 20px;
        padding-top: 10px;
        aspect-ratio: 1;
+       overflow: hidden;
     }
 .SquareContainerHeader{
         font-weight: bolder;
@@ -49,18 +49,20 @@ body{
         align-items:center;
         flex-direction: row;
         margin-right: auto;
-        margin-left:2.5vw;
+        margin-left:0;
 }
 .SquareHeaderIcon{
     filter: contrast(0%);
     width: 5vw;
     aspect-ratio: 1;
     margin-right: 2vw;
+    box-sizing: border-box;
 }
     /*Summary Container*/
 .Summary-Container{
         background-color: transparent;
-        height: 35vh;
+        margin-bottom: 5vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -79,17 +81,86 @@ body{
 }
 
 
-    /*Hourly container*/
+    /*Hourly Container*/
 .Hourly-Container{
+  
+     padding: 5vw;
+        padding-top: 1.5vh;
+        padding-bottom: 0vh;
+    display: flex;
+    flex-direction: column;
         background-color: rgba(6, 25, 59, 0.5);
         border: 1px solid rgba(110, 119, 136, .4);
         height: 20vh;
+    overflow-x: scroll;
     }
+    .Hourly-Container-Header{
+        position: -webkit-sticky;
+        position:sticky;
+        display: flex;
+        left: 0;
+        align-items:center;
+        width: 100%;
+        margin-right: auto;
+        padding-bottom: 1vh;
+        margin-left:0;
+        margin-bottom: 1vh;
+        box-sizing: border-box;
+        color: rgba(113,121,134);
+        font-size: clamp(20px,4vw,30px);
+        font-weight: bolder;
+        border-bottom: 0.5px solid rgba(113,121,134);
+    }
+    .Hourly-Container-Grid{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-self: start;
+        margin: auto;
+        margin-top: 0;
+        padding-bottom: 1vh;
+        overflow-x: scroll;
+        gap:5vw;
+    }
+    .Hourly-Container-Grid > div {
+        width: auto;
+        border: 0px red solid;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+    .Hourly-Temp{
+        margin: auto;
+        font-size: clamp(10px,8vw,30px);
+    }
+    .Hourly-Time{
+        margin: 0;
+        margin:auto;
+        
+        font-size: clamp(12px,6vw,22.5px);
+    }
+    .Hourly-Container-Grid > div > img {
+     width: clamp(15px,10vw,50px);
+     aspect-ratio: 1;
+     margin: auto;
+     
+     filter:invert();
+    }
+   
+
+
+    /*Forecast Container*/
     .Forecast-Container{
         background-color: rgba(6, 25, 59, 0.5);
         border: 1px solid rgba(110, 119, 136, .4);
         height: 25vh;
     }
+
+
+
+    /*Precipitation Container*/
     .Precipitation-Container{
         overflow: scroll;
         background-color: rgba(6, 25, 59, 0.5);
@@ -99,16 +170,19 @@ body{
         flex-direction: column;
         padding: 5vw;
         padding-top: 2.5vw;
+        overflow: hidden;
     }
     .Precipitation-Header{
-        font-weight: bolder;
-        color: rgba(113,121,134);
-        font-size: clamp(20px,4vw,30px);
-        text-align: start;
         display: flex;
+        flex-direction: row;
+        align-items:center;
         justify-self: start;
         margin-right: auto;
         margin-left:0;
+
+        color: rgba(113,121,134);
+        font-size: clamp(20px,4vw,30px);
+        font-weight: bolder;
     }
     .Precipitation-Grid{
         text-align: start;
@@ -125,7 +199,7 @@ body{
     flex-direction: row;
     
     }
-    .Precipitation-Day > p {
+    .Precipitation-Day p {
         font-size: clamp(10px,6vw,40px);
         font-weight: bolder;
         margin: 0;
@@ -135,20 +209,26 @@ body{
         
         align-items: center;
     }
-    .Precipitation-Day img{
+    .Precipitation-Day  img{
        width: clamp(20px,10vw,50px);
        aspect-ratio:1;
        filter:invert();
+    }
+    .Precipitation-Day > div {
+        display: flex;
+        flex-direction: row;
+        
     }
     .Precipitation-Grid > div {
         box-sizing: border-box;
         display: flex;
         justify-content:space-between;
         align-items: center;
-        border-top: .25px solid white;
+        border-top: .25px solid rgba(113,121,134);
         width: 100%;
         
     }
+   
     /*FeelsLike Container*/
     .FeelsLike-Container{
         background-color: rgba(6, 25, 59, 0.5);
@@ -157,14 +237,18 @@ body{
     }
     .FeelsLike-Container .FeelsLikeTemp{
         margin: auto;
+        margin-top: 2vw;
+        margin-left: 0;
         font-size: clamp(20px,8vw,60px);
         font-weight: bolder;
     }
     .WindSpeed{
         margin: auto;
+        margin-top: 2vw;
+        margin-left: 0;
         font-size: clamp(15px,7vw,60px);
         font-weight: bolder;
-        text-align: center;
+        text-align: start;
     }
 
 
