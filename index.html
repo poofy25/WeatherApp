@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Uno Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+   <div class="CardContainer-Grid">
+   <div class="Summary-Container Span-2">
+
+<p class="Location">Chisinau</p>
+<p class="Temperature">&deg;C</p>
+<p class="Description">Cloudy</p>
+<p class="H-L"> H:3 C  L:-1 C</p>
+<p class="LastUpdate" style="font-size:clamp(10px,4vw,20px); margin: 0;">Last Updated: 2022-12-01 19:15</p>
+   </div>
+   <div class="Hourly-Container Span-3"> 
+    
+    <div class="Hourly-Container-Header">
+        <img class="SquareHeaderIcon" src="PNGS/Hourly-Clock.png">
+        Hourly
+    </div>
+    
+    <div class="Hourly-Container-Grid">
+        <div class="DefaultHour">
+            <p class="Hourly-Time">Now</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">2PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">3PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">4PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">5PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">6PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">7PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">8PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">9PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">10PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">11PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p></div>
+        <div class="DefaultHour">
+            <p class="Hourly-Time">12PM</p>
+            <img src="PNGS/PlaceHolder-Cloud.png">
+            <p class="Hourly-Temp">1°</p>
+        </div>
+    </div>
+    
+    
+    
+    
+
+
+
+</div>
+
+   <div class="Forecast-Container Span-2"> Forecast</div>
+
+   <div class="Precipitation-Container Span-2">
+    <div class="Precipitation-Header">
+        <img src="PNGS/Precipitation-WaterIcon.png" class="SquareHeaderIcon">
+        PRECIPITATION</div>
+
+<div class="Precipitation-Grid">
+<div class="Precipitation-Day" id="Precipitation-Day">
+    <p>Today</p>
+    <div>
+    <img src="PNGS/Precipitation-RainingIcon.png">
+        <p class="stRainChance"> :0%</p>
+    </div>
+<div>
+        <img src="PNGS/Precipitation-SnowingIcon.png">
+    <p class="stSnowChance"> 2%</p>
+</div>
+</div>
+<div class="Precipitation-Day">
+    <p class="Precipitation-Day-NumberOne">2 Dec</p>
+    <div>
+    <img src="PNGS/Precipitation-RainingIcon.png">
+    <p class="ndRainChance">:0% </p>
+</div>
+    <div>
+    <img src="PNGS/Precipitation-SnowingIcon.png">
+<p class="ndSnowChance"> :80%</p>
+</div>
+</div>
+<div class="Precipitation-Day" style="border-bottom: .25px solid rgba(113,121,134);">
+    <p class="Precipitation-Day-NumberTwo">3 Dec</p>
+    <div>
+    <img src="PNGS/Precipitation-RainingIcon.png">
+    <p class="rdRainChance">:0%</p>
+</div>
+    <div>
+    <img src="PNGS/Precipitation-SnowingIcon.png">
+<p  class="rdSnowChance">:80%</p>
+</div>
+</div>
+</div>
+
+    </div>
+
+   <div class="FeelsLike-Container SquareContainer"> 
+    <div class="SquareContainerHeader">
+        <img src="PNGS/FeelsLike-Termometer.png" class="SquareHeaderIcon">
+        FEELS LIKE</div>
+    <p class="FeelsLikeTemp">-1°</p>
+   </div>
+
+   <div class="FeelsLike-Container SquareContainer"> 
+    <div class="SquareContainerHeader"> 
+        <img src="PNGS/Wind-WindIcon.png" class="SquareHeaderIcon">
+        WIND </div>
+    <p class="WindSpeed">8km/h<br>NE</p>
+   </div>
+
+   <div class="FeelsLike-Container SquareContainer"> Precipitation</div>
+   <div class="FeelsLike-Container SquareContainer"> Humidity</div>
+   <div class="FeelsLike-Container SquareContainer"> UV index</div>
+   <div class="FeelsLike-Container SquareContainer"> SunRise/Sunset</div>
+   <div class="FeelsLike-Container SquareContainer"> Visibility</div>
+   <div class="FeelsLike-Container SquareContainer"> Pressure</div>
+   </div>
+
+        <script src="Game.js"></script>
+    </body>
+</html>
