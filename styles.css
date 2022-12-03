@@ -132,8 +132,9 @@ body{
         overflow: hidden;
     }
     .Hourly-Temp{
+        font-family: sans-serif;
         margin: auto;
-        font-size: clamp(10px,8vw,30px);
+        font-size: clamp(10px,6vw,30px);
     }
     .Hourly-Time{
         margin: 0;

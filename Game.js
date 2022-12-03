@@ -44,7 +44,6 @@ navigator.geolocation.getCurrentPosition(position =>{
         const First_FC = forecastday[0].day
         const Second_FC = forecastday[1].day
         const Third_FC = forecastday[2].day
-        
         let day1dateraw = forecastday[1].date 
         let day2dateraw = forecastday[2].date 
         const day1dateArray = day1dateraw.split("-");
@@ -52,9 +51,14 @@ navigator.geolocation.getCurrentPosition(position =>{
         
        
         const months = ["None" , "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"];
-       console.log(day1dateArray[1])
-        console.log(months[day1dateArray[1]])
-
+        const AM_PM_Time =
+         [
+          "12PM" , "1AM" , "2AM" , "3AM" , "4AM" , "5AM" , "6AM"
+          , "7AM" , "8AM" , "9AM" , "10AM" , "11AM" , "12AM"
+          , "1PM" , "2PM" , "3PM" , "4PM" , "5PM" , "6PM"
+          , "7PM" , "8PM" , "9PM" , "10PM" , "11PM" , "12PM"
+        ] 
+        
         //Precipitation Forecast
 
         const FirstRainChance = First_FC.daily_chance_of_rain
@@ -86,9 +90,80 @@ navigator.geolocation.getCurrentPosition(position =>{
         const {temp_c , humidity , feelslike_c, condition, wind_kph ,wind_dir , last_updated} = current;
         const {text} = condition
         const {name} = location
+
+
+
+        const last_updated_Array = last_updated.split(/[\s,:]+/);
+        const last_updated_hour = Number(last_updated_Array[1])
 //Today Forecast
         const { maxtemp_c , mintemp_c} = First_FC
-        
+
+
+        //Hourly Forecast
+        console.log(typeof last_updated_hour)
+        const TotalHours = document.querySelectorAll(".Hourly-Time");
+        const TotalTemps = document.querySelectorAll(".Hourly-Temp");
+
+        let IL = 0;
+        for (var i = 1 ; i < TotalHours.length ; i++){
+                let hour = last_updated_hour + i;
+                
+                if (hour <= 24 ) {
+                       
+                        TotalHours[i].textContent = AM_PM_Time[hour];
+                } else if (hour > 24) {
+                    
+                    IL = IL + 1 ;
+                    hour = IL;
+                    TotalHours[i].textContent = AM_PM_Time[hour];
+                }
+           
+        }
+        let ILL = 0;
+        for (var i = 1 ; i < TotalTemps.length ; i++){
+               
+                let hour = last_updated_hour + i;
+                
+                if (hour < 24 ) {
+                     
+                        
+                           TotalTemps[i].textContent = " " + Math.round(forecastday[0].hour[hour].temp_c) + "°"
+                        
+                } else if (hour === 24){
+                      
+                                TotalTemps[i].textContent= " " + Math.round(forecastday[0].hour[0].temp_c) + "°"
+                        
+                } else if (hour > 24) {
+                    
+                    ILL = ILL + 1 ;
+                    hour = ILL;
+                    TotalTemps[i].textContent = " " + Math.round(forecastday[1].hour[hour].temp_c) + "°"
+                    
+                }
+
+        }
+        TotalTemps[0].textContent = " " + temp_c + "°"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
