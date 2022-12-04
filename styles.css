@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     color: white;
     background-image: linear-gradient(rgb(88, 111, 146),rgb(32,36,45));
@@ -42,7 +45,7 @@ body{
 .SquareContainerHeader{
         font-weight: bolder;
         color: rgba(113,121,134);
-        font-size: clamp(15px,4vw,30px);
+        font-size: clamp(10px,2vw,30px);
         text-align: start;
         display: flex;
         justify-self: start;
@@ -63,22 +66,35 @@ body{
         background-color: transparent;
         margin-bottom: 5vh;
         height: auto;
-        display: flex;
+        display:flex;
         flex-direction: column;
         align-items: center;
+        
+        background-color: transparent;
+        z-index: 10;
+        overflow: hidden;
 }
 
-.Summary-Container > p{
+.Summary-Container p{
         margin: 0.5rem;
         font-size: clamp(20px,8vw,25px);
 }
 .Summary-Container .Location{
         font-size: clamp(25px,10vw,50px);
+        
 }
 .Summary-Container .Temperature{
         font-size: clamp(30px,15vw,50px);
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/*On scroll*/
+
+
+.Summary_OnScroll_Text {
+    font-size: 15px;
+}
+
 
 
     /*Hourly Container*/
@@ -86,17 +102,22 @@ body{
   
      padding: 5vw;
         padding-top: 1.5vh;
-        padding-bottom: 0vh;
+        padding-bottom: 1.5vh;
     display: flex;
     flex-direction: column;
         background-color: rgba(6, 25, 59, 0.5);
         border: 1px solid rgba(110, 119, 136, .4);
-        height: 20vh;
+        height: auto;
     overflow-x: scroll;
+    
+    }
+    .Hourly-Container::-webkit-scrollbar{
+        height: 10px;
     }
     .Hourly-Container-Header{
-        position: -webkit-sticky;
-        position:sticky;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
         display: flex;
         left: 0;
         align-items:center;
@@ -107,7 +128,7 @@ body{
         margin-bottom: 1vh;
         box-sizing: border-box;
         color: rgba(113,121,134);
-        font-size: clamp(20px,4vw,30px);
+        font-size: clamp(15px,2vw,30px);
         font-weight: bolder;
         border-bottom: 0.5px solid rgba(113,121,134);
     }
@@ -118,8 +139,7 @@ body{
         justify-self: start;
         margin: auto;
         margin-top: 0;
-        padding-bottom: 1vh;
-        overflow-x: scroll;
+        overflow:hidden;
         gap:5vw;
     }
     .Hourly-Container-Grid > div {
@@ -147,47 +167,147 @@ body{
      aspect-ratio: 1;
      margin: auto;
      
-     filter:invert();
+ 
     }
    
 
 
     /*Forecast Container*/
     .Forecast-Container{
-        background-color: rgba(6, 25, 59, 0.5);
-        border: 1px solid rgba(110, 119, 136, .4);
-        height: 25vh;
-    }
+
+background-color: rgba(6, 25, 59, 0.5);
+border: 1px solid rgba(110, 119, 136, .4);
+
+  height: auto;
+
+    padding: 5vw;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+
+      display: flex;
+      flex-direction: column;
+  
+        overflow-x: scroll;
+
+}
+
+.Forecast-Container-Header{
+
+position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 0;
+left: 0;
+
+    display: flex;
+    align-items:center;
+      
+        margin-right: auto;
+        margin-left:0;
+        margin-top: 0;
+        
+
+        padding-bottom: 1vh;
+        width: 100%;
+
+        box-sizing: border-box;
+        color: rgba(113,121,134);
+
+        font-size: clamp(15px,2vw,30px);
+        font-weight: bolder;
+        border-bottom: 0.5px solid rgba(113,121,134);
+}
+
+.Forecast-Container-Header  p {
+    margin: 0;
+}
+
+.Forecast-Grid{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+
+}
+
+.Forecast-Grid > :nth-child(2){
+    border-top: 0.5px solid rgba(113,121,134) ;
+    border-bottom: 0.5px solid rgba(113,121,134);
+    
+}
+
+.Forecast-Day{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+
+.Forecast-Date{
+    margin: 0;
+     font-size: clamp(15px,5vw,25px);
+     margin-right: 5vw;
+}
+
+.H_L-Day{
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(15px,5vw,25px);
+    flex: 1 1 auto;
+    justify-content: end;
+}
+
+.Forecast-Day-Highest-Temp{
+    margin: 0;
+    padding-right: 2vw;
+    border-right: 1px solid rgba(113,121,134);
+}
+.Forecast-Day-Lowest-Temp{
+    margin: 0;
+    margin-left: 2vw;
+}
+
+.Forecast-Image{
+    width: clamp(20px,10vw,40px);
+    aspect-ratio: 1;
+    margin-right: auto;
+    justify-content: center;
+}
+
 
 
 
     /*Precipitation Container*/
     .Precipitation-Container{
-        overflow: scroll;
+        
         background-color: rgba(6, 25, 59, 0.5);
         border: 1px solid rgba(110, 119, 136, .4);
-        height:30vh;
+        height:auto;
         display: flex;
         flex-direction: column;
         padding: 5vw;
-        padding-top: 2.5vw;
+        padding-top: 1.5vh;
+        padding-bottom: 1.5vh;
         overflow: hidden;
     }
     .Precipitation-Header{
         display: flex;
         flex-direction: row;
         align-items:center;
-        justify-self: start;
+        justify-self: center;
         margin-right: auto;
         margin-left:0;
 
         color: rgba(113,121,134);
-        font-size: clamp(20px,4vw,30px);
-        font-weight: bolder;
+        font-size: clamp(15px,2vw,30px);
+        
     }
     .Precipitation-Grid{
         text-align: start;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         height: 100%;
         width: 100%;
         padding-left: 5vw;
@@ -198,11 +318,12 @@ body{
     .Precipitation-Day{
     display: flex;
     flex-direction: row;
-    
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
     }
     .Precipitation-Day p {
-        font-size: clamp(10px,6vw,40px);
-        font-weight: bolder;
+        font-size: clamp(15px,5vw,25px);
+     
         margin: 0;
         padding: 0;
         display: flex;
@@ -211,8 +332,8 @@ body{
         align-items: center;
     }
     .Precipitation-Day  img{
-       width: clamp(20px,10vw,50px);
-       aspect-ratio:1;
+        width: clamp(20px,8vw,40px);
+        aspect-ratio:1;
        filter:invert();
     }
     .Precipitation-Day > div {

@@ -6,6 +6,9 @@ const IconIMG = document.querySelector(".Icon-IMG")
 const H_L = document.querySelector(".H-L")
 const FeelsLikeDOM = document.querySelector(".FeelsLikeTemp")
 const WS = document.querySelector(".WindSpeed");
+
+
+const Summary_Container = document.querySelector(".Summary-Container")
 //PRECIPTATION
 const FirstRainChanceDOM = document.querySelector(".stRainChance");
         const FirstSnowChanceDOM = document.querySelector(".stSnowChance");
@@ -100,10 +103,9 @@ navigator.geolocation.getCurrentPosition(position =>{
 
 
         //Hourly Forecast
-        console.log(typeof last_updated_hour)
         const TotalHours = document.querySelectorAll(".Hourly-Time");
         const TotalTemps = document.querySelectorAll(".Hourly-Temp");
-
+        const Hourly_Images = document.querySelectorAll(".Hourly-Image");
         let IL = 0;
         for (var i = 1 ; i < TotalHours.length ; i++){
                 let hour = last_updated_hour + i;
@@ -143,22 +145,59 @@ navigator.geolocation.getCurrentPosition(position =>{
 
         }
         TotalTemps[0].textContent = " " + temp_c + "°"
+        let IconCounter = 0;
+for (var i = 0 ; i < Hourly_Images.length ; i++) {
+
+
+
+                let hour = last_updated_hour + i;
+          
+            if (hour < 24 ) {
+                     
+                        
+                Hourly_Images[i].src = forecastday[0].hour[hour].condition.icon
+             
+     } else if (hour == 24){
+     
+        Hourly_Images[i].src = forecastday[1].hour[0].condition.icon
+            
+     } else if (hour > 24) {
+         
+        IconCounter = IconCounter + 1 ;
+         hour = IconCounter;
+         Hourly_Images[i].src = forecastday[1].hour[hour].condition.icon
+         
+     }
+
+}
+
+Hourly_Images[0].src = current.condition.icon
 
 
 
 
+//FORECAST 
+
+const Forecast_Dates = document.querySelectorAll(".Forecast-Date");
+const Forecast_Images = document.querySelectorAll(".Forecast-Image");
+const Forecast_Highest_Temp = document.querySelectorAll(".Forecast-Day-Highest-Temp");
+const Forecast_Lowest_Temp = document.querySelectorAll(".Forecast-Day-Lowest-Temp");
 
 
+Forecast_Dates[1].textContent = day1dateArray[2][1] + " " + months[day1dateArray[1]] 
+Forecast_Dates[2].textContent = day2dateArray[2][1] + " " + months[day2dateArray[1]] 
 
+for (let i = 0 ; i < Forecast_Images.length ; i++){
 
+Forecast_Images[i].src = forecastday[i].day.condition.icon
 
+}
 
-
-
-
-
-
-
+for (let i = 0 ; i < 3 ; i++){
+console.log(i)
+    Forecast_Highest_Temp[i].textContent = "H: " + Math.round(forecastday[i].day.maxtemp_c) + "°"
+    Forecast_Lowest_Temp[i].textContent = "H: " + Math.round(forecastday[i].day.mintemp_c) + "°"
+}
 
 
 
@@ -184,3 +223,4 @@ navigator.geolocation.getCurrentPosition(position =>{
 }
 
 })
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Uno Project</title>
+<title>poofy's Weather</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
     </head>
@@ -9,11 +9,11 @@
    <div class="CardContainer-Grid">
    <div class="Summary-Container Span-2">
 
-<p class="Location">Chisinau</p>
-<p class="Temperature">&deg;C</p>
-<p class="Description">Cloudy</p>
-<p class="H-L"> H:3 C  L:-1 C</p>
-<p class="LastUpdate" style="font-size:clamp(10px,4vw,20px); margin: 0;">Last Updated: 2022-12-01 19:15</p>
+<p class="Location Summary_P">Chisinau</p>
+<p class="Temperature Summary_P">&deg;C</p>
+<p class="Description Summary_P">Cloudy</p>
+<p class="H-L Summary_P"> H:3 C  L:-1 C</p>
+<p class="LastUpdate Summary_P" style="font-size:clamp(10px,4vw,20px); margin: 0;">Last Updated: 2022-12-01 19:15</p>
    </div>
    <div class="Hourly-Container Span-3"> 
     
@@ -25,62 +25,62 @@
     <div class="Hourly-Container-Grid">
         <div class="DefaultHour">
             <p class="Hourly-Time">Now</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">2PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">3PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">4PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">5PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">6PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">7PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">8PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">9PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">10PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
         <div class="DefaultHour">
             <p class="Hourly-Time">11PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p></div>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p></div>
         <div class="DefaultHour">
             <p class="Hourly-Time">12PM</p>
-            <img src="PNGS/PlaceHolder-Cloud.png">
-            <p class="Hourly-Temp">1°</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Hourly-Image">
+            <p class="Hourly-Temp">NaN</p>
         </div>
     </div>
     
@@ -92,12 +92,53 @@
 
 </div>
 
-   <div class="Forecast-Container Span-2"> Forecast</div>
+   <div class="Forecast-Container Span-2">
+
+    <div class="Forecast-Container-Header">
+        <img src="PNGS/Forecast-Icon.png" class="SquareHeaderIcon">
+        <p>Forecast</p>
+    </div>
+    <div class="Forecast-Grid">
+
+        <div class="Forecast-Day">
+
+             <p class="Forecast-Date">Today</p>
+             <img src="PNGS/PlaceHolder-Cloud.png" class="Forecast-Image">
+             <div class="H_L-Day">
+                <p class="Forecast-Day-Highest-Temp">H: 2°</p>
+                <p class="Forecast-Day-Lowest-Temp"> L: -2°</p>
+             </div>
+
+        </div>
+        <div class="Forecast-Day">
+
+            <p class="Forecast-Date">3 Dec</p>
+            <img src="PNGS/PlaceHolder-Cloud.png" class="Forecast-Image">
+            <div class="H_L-Day">
+               <p class="Forecast-Day-Highest-Temp">H: 2°</p>
+               <p class="Forecast-Day-Lowest-Temp"> L: -2°</p>
+            </div>
+
+       </div>
+       <div class="Forecast-Day">
+
+        <p class="Forecast-Date">2 Dec</p>
+        <img src="PNGS/PlaceHolder-Cloud.png" class="Forecast-Image">
+        <div class="H_L-Day">
+           <p class="Forecast-Day-Highest-Temp">H: 2°</p>
+           <p class="Forecast-Day-Lowest-Temp"> L: -1°</p>
+        </div>
+
+   </div>
+
+    </div>
+
+   </div>
 
    <div class="Precipitation-Container Span-2">
     <div class="Precipitation-Header">
         <img src="PNGS/Precipitation-WaterIcon.png" class="SquareHeaderIcon">
-        PRECIPITATION</div>
+        Precipitation</div>
 
 <div class="Precipitation-Grid">
 <div class="Precipitation-Day" id="Precipitation-Day">
@@ -122,7 +163,7 @@
 <p class="ndSnowChance"> :80%</p>
 </div>
 </div>
-<div class="Precipitation-Day" style="border-bottom: .25px solid rgba(113,121,134);">
+<div class="Precipitation-Day">
     <p class="Precipitation-Day-NumberTwo">3 Dec</p>
     <div>
     <img src="PNGS/Precipitation-RainingIcon.png">
@@ -141,7 +182,7 @@
     <div class="SquareContainerHeader">
         <img src="PNGS/FeelsLike-Termometer.png" class="SquareHeaderIcon">
         FEELS LIKE</div>
-    <p class="FeelsLikeTemp">-1°</p>
+    <p class="FeelsLikeTemp">-NaN</p>
    </div>
 
    <div class="FeelsLike-Container SquareContainer"> 
