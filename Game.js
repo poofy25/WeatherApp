@@ -6,7 +6,7 @@ const IconIMG = document.querySelector(".Icon-IMG")
 const H_L = document.querySelector(".H-L")
 const FeelsLikeDOM = document.querySelector(".FeelsLikeTemp")
 const WS = document.querySelector(".WindSpeed");
-
+const WD = document.querySelector(".Wind-Direction")
 
 const Summary_Container = document.querySelector(".Summary-Container")
 //PRECIPTATION
@@ -90,7 +90,7 @@ navigator.geolocation.getCurrentPosition(position =>{
 
 
 //Current Time Data
-        const {temp_c , humidity , feelslike_c, condition, wind_kph ,wind_dir , last_updated} = current;
+        const {temp_c , cloud , humidity , feelslike_c, condition, wind_kph ,wind_dir , last_updated} = current;
         const {text} = condition
         const {name} = location
 
@@ -196,20 +196,23 @@ Forecast_Images[i].src = forecastday[i].day.condition.icon
 for (let i = 0 ; i < 3 ; i++){
 console.log(i)
     Forecast_Highest_Temp[i].textContent = "H: " + Math.round(forecastday[i].day.maxtemp_c) + "°"
-    Forecast_Lowest_Temp[i].textContent = "H: " + Math.round(forecastday[i].day.mintemp_c) + "°"
+    Forecast_Lowest_Temp[i].textContent =  "L: " + Math.round(forecastday[i].day.mintemp_c) + "°"
 }
 
+         //CLOUDS
+        const CloundsTextDOM = document.querySelector(".CloudsPer")
+        const HumidityTextDOM = document.querySelector(".HumidityPer")
+        const Humidity_DewPoint_DOM = document.querySelector(".Humidity-DewPoint")
 
 
 
-
-
-
-
-
+        Humidity_DewPoint_DOM.textContent = "The dew point is "+ forecastday[0].hour[last_updated_hour].dewpoint_c +"° right now."
+        HumidityTextDOM.textContent = humidity + "%"
+        CloundsTextDOM.textContent = cloud + "%"
         UpdateDate.textContent = "Last updated: " + last_updated
         LocationDOM.textContent = name
-        WS.textContent = `${wind_kph}km/h \n ${wind_dir}`
+        WS.textContent = wind_kph
+        WD.textContent = wind_dir
         FeelsLikeDOM.textContent = feelslike_c + "°"
         DescriptionDOM.textContent = text  
         H_L.textContent = "H:" + maxtemp_c +"°" + " L:" + mintemp_c + "°"
