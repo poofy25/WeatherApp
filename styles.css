@@ -257,7 +257,7 @@ left: 0;
 .H_L-Day{
     display: flex;
     flex-direction: row;
-    font-size: clamp(15px,5vw,25px);
+    font-size: clamp(10px,4.5vw,25px);
     flex: 1 1 auto;
     justify-content:end;
     padding-left: 20%;
