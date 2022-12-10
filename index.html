@@ -4,6 +4,8 @@
 <title>poofy's Weather</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="AboutProject.css">
     </head>
     <body>
    <div class="CardContainer-Grid">
@@ -107,6 +109,7 @@
              <img src="PNGS/PlaceHolder-Cloud.png" class="Forecast-Image">
              <div class="H_L-Day">
                 <p class="Forecast-Day-Highest-Temp">H: 2°</p>
+                <div class="Forecast-Day-Breaker"></div>
                 <p class="Forecast-Day-Lowest-Temp"> L: -2°</p>
              </div>
 
@@ -117,6 +120,7 @@
             <img src="PNGS/PlaceHolder-Cloud.png" class="Forecast-Image">
             <div class="H_L-Day">
                <p class="Forecast-Day-Highest-Temp">H: 2°</p>
+               <div class="Forecast-Day-Breaker"></div>
                <p class="Forecast-Day-Lowest-Temp"> L: -2°</p>
             </div>
 
@@ -127,6 +131,7 @@
         <img src="PNGS/PlaceHolder-Cloud.png" class="Forecast-Image">
         <div class="H_L-Day">
            <p class="Forecast-Day-Highest-Temp">H: 2°</p>
+           <div class="Forecast-Day-Breaker"></div>
            <p class="Forecast-Day-Lowest-Temp"> L: -1°</p>
         </div>
 
@@ -179,7 +184,7 @@
 
     </div>
 
-   <div class="FeelsLike-Container SquareContainer"> 
+   <div class="SquareContainer"> 
     <div class="SquareContainerHeader FeelsLike-Header">
         <img src="PNGS/FeelsLike-Termometer.png" class="SquareHeaderIcon">
         <p>Feels like</p>
@@ -187,7 +192,7 @@
     <p class="FeelsLikeTemp">NaN</p>
    </div>
 
-   <div class="Wind-Container SquareContainer"> 
+   <div class="SquareContainer"> 
     <div class="SquareContainerHeader"> 
         <img src="PNGS/Wind-WindIcon.png" class="SquareHeaderIcon">
         Wind </div>
@@ -196,7 +201,7 @@
     <p class="Wind-Direction">NE</p>
    </div>
 
-   <div class="Clouds-Container SquareContainer"> 
+   <div class="SquareContainer"> 
     <div class="SquareContainerHeader"> 
         <img src="PNGS/Clouds-Clouds.png" class="SquareHeaderIcon">
         Clouds
@@ -209,7 +214,7 @@
 </div>
 
 
-<div class="Humidity-Container SquareContainer"> 
+<div class="SquareContainer"> 
     <div class="SquareContainerHeader"> 
         <img src="PNGS/Humidity-Icon.png" class="SquareHeaderIcon">
         Humidity
@@ -220,12 +225,67 @@
     </div>
 </div>
 
-   <div class="SquareContainer"> UV index</div>
-   <div class="SquareContainer"> SunRise/Sunset</div>
-   <div class="SquareContainer"> Visibility</div>
-   <div class="SquareContainer"> Pressure</div>
+   <div class="UV_Index SquareContainer">
+    <div class="SquareContainerHeader"> 
+        <img src="PNGS/UV_Index_icon.png" class="SquareHeaderIcon">
+        UV Index
+    </div>
+   <div class="UV-Content">
+    
+    <p class="UV">NaN</p>
+    <p class="UV_Desc">NaN</p>
+</div>
    </div>
 
+   <div class="SquareContainer">  
+     <div class="SquareContainerHeader"> 
+        <img src="PNGS/UV_Index_icon.png" class="SquareHeaderIcon">
+       <p style="margin: 0;" class="Sun_Header">NaN</p>
+    </div>
+    <div class="Sun-Content">
+        <p class="SunHour">NaN</p>
+        <p class="Sun_Desc">NaN</p>
+    </div>
+   </div>
+   <div class="SquareContainer">
+    <div class="SquareContainerHeader"> 
+        <img src="PNGS/Visibility-Icon.png" class="SquareHeaderIcon">
+       Visibility
+    </div>
+    <div class="Visibility-Content">
+        <p class="VisibilityKM">100%</p>
+    </div>
+   </div>
+   <div class="SquareContainer">
+    <div class="SquareContainerHeader"> 
+        <img src="PNGS/Pressure-Icon.png" class="SquareHeaderIcon">
+       Pressure
+    </div>
+    <div class="Pressure-Content">
+        <p class="PressureNumber">NaN</p>
+        <p class="PressureDesc">NaN</p>
+    </div>
+   </div>
+   </div>
+
+<div class="ProjectPopUp">
+
+<div class="ProjectHeader">
+    <p>About the project</p>
+    <img src="PNGS/X_Button.png" class="X_Button">
+</div>
+
+</div>
+
+<div class="Footer">
+    <p class="AboutProject">> About the project < </p>
+</div>
+
+
+
+
+
         <script src="Game.js"></script>
+        <script src="AboutProejct.js"></script>
     </body>
 </html>

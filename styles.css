@@ -1,3 +1,5 @@
+
+ @media screen and (max-width:767px){
 html{
     scroll-behavior: smooth;
 }
@@ -5,9 +7,9 @@ body{
     color: white;
     background-image: linear-gradient(rgb(88, 111, 146),rgb(32,36,45));
     padding: 0;
-    padding-bottom: 10vh;
     font-family: monospace;
     font-size: 1em;
+    margin: 0;
 }
 /*GRID*/
 .CardContainer-Grid{
@@ -251,29 +253,36 @@ left: 0;
 .Forecast-Date{
     margin: 0;
      font-size: clamp(15px,5vw,25px);
-     margin-right: 5vw;
+     width: 30%;
+     display: flex;
 }
 
 .H_L-Day{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     font-size: clamp(10px,4.5vw,25px);
-    flex: 1 1 auto;
-    justify-content:end;
-    padding-left: 20%;
+    width: 45%;
+    position: relative;
 }
 
 .Forecast-Day-Highest-Temp{
     margin: 0;
-    
+    display: flex;
     justify-self: start;
     
-    padding-right: 2vw;
-    border-right: 1px solid rgba(113,121,134);
 }
+
+.Forecast-Day-Breaker{
+ position:absolute;
+ height: 100%;
+ right: 16.5vw;
+    width: 1px;
+    background-color: rgba(113,121,134);
+}
+
 .Forecast-Day-Lowest-Temp{
-    margin: auto;
-    margin-left: 2vw;
+    margin: 0;
 }
 
 .Forecast-Image{
@@ -363,20 +372,20 @@ left: 0;
     .FeelsLike-Header > p {
         margin: 0;
     }
-    .FeelsLike-Container .FeelsLikeTemp{
+
+    .FeelsLikeTemp{
         margin: auto;
-        margin-top: 2vh;
+        margin-top: 0.5vh;
+        margin-left: 0;
         font-size: clamp(20px,8vw,60px);
         font-weight: bolder;
    
     }
-    .Wind-Container{
-      
-        font-size: clamp(15px,5vw,60px);
-        font-weight: bolder;
-        text-align: center;
-    
-    }
+
+
+    /*Wind speed container*/
+
+
     .WindSpeed{
         margin: auto;
         margin-top: 2vw;
@@ -432,6 +441,102 @@ left: 0;
        margin-bottom: 0;
         font-size: clamp(10px,3.2vw,60px) ;
     }
+  
+
+    /*UV index*/
+
+
+      .UV-Content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5vh;
+        width: 100%;
+        height:100%;
+      }
+      .UV{
+        margin: 0;
+        font-size: clamp(15px,8vw,60px);
+        font-weight:bolder;
+      }
+      .UV_Desc{
+        margin: 0;
+        font-size: clamp(15px,6vw,40px);
+        font-weight: bold;
+      }
+
+
+      /* SUNSET / SUNRISE */
+
+
+    .Sun-Content{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 100%;
+        height:100%;
+    }
+    
+    .SunHour{
+        margin: 0;
+        margin-top: 0.5vh;
+        font-size: clamp(15px,6vw,60px) ;
+        
+        font-weight:bolder;
+    }
+
+    .Sun_Desc{
+        margin-top: auto;
+        margin-bottom: 0;
+         font-size: clamp(10px,3.2vw,60px) ;
+    }
+
+
+    /*Visibility Container*/
+
+    .Visibility-Content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height:100%;
+    }
+    
+    .VisibilityKM{
+        margin: 0;
+        margin-top: 0.5vh;
+        font-size: clamp(15px,8vw,60px) ;
+        
+        font-weight:bolder;
+    }
+
+
+    /*Pressure Container*/
+
+     .Pressure-Content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height:100%;
+     }
+
+    .PressureNumber{
+        margin: 0;
+        margin-top: 0.5vh;
+        font-size: clamp(15px,7vw,60px);
+        font-weight:bolder;
+    }
+
+    .PressureDesc{
+        margin: 0;
+        font-size: clamp(15px,6vw,40px);
+        font-weight: bold;
+    }
+
+
+
+
+
+
+
 
     @media screen and (max-width:767px){
         .Span-2{
@@ -441,7 +546,7 @@ left: 0;
          grid-column: span 2;
         }
     }
-
+}
     /*FOR DESKTOP*/
     @media screen and (min-width:768px) {
    

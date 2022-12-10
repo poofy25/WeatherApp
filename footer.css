@@ -1,0 +1,21 @@
+.Footer{
+    background-color: transparent;
+    display: relative;
+    bottom: 0;
+    height: 20vh;
+    width: 100vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AboutProject{
+    font-size: clamp(20px,5vw,70px);
+    transition: 0.5s ease;
+    color: white;
+}
+.AboutProject:hover{
+    color: rgba(6, 25, 59, 1);
+    background-color: white;
+    border-radius: 10px;
+}

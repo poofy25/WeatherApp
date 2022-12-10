@@ -84,13 +84,13 @@ navigator.geolocation.getCurrentPosition(position =>{
         ThirdRainChanceDOM.textContent =":" + ThirdRainChance + "%"
         ThirdSnowChanceDOM.textContent =":" + ThirdSnowChance + "%"
 
-        PrecipitationDay1DOM.textContent = day1dateArray[2][1] + " " + months[day1dateArray[1]] 
-        PrecipitationDay2DOM.textContent = day2dateArray[2][1] + " " + months[day2dateArray[1]]
-
+        PrecipitationDay1DOM.textContent = day1dateArray[2] + " " + months[day1dateArray[1]] 
+        PrecipitationDay2DOM.textContent = day2dateArray[2] + " " + months[day2dateArray[1]]
+    
 
 
 //Current Time Data
-        const {temp_c , cloud , humidity , feelslike_c, condition, wind_kph ,wind_dir , last_updated} = current;
+        const {temp_c , cloud , humidity , feelslike_c, condition, wind_kph ,wind_dir , last_updated , uv , vis_km , pressure_mb         } = current;
         const {text} = condition
         const {name} = location
 
@@ -184,8 +184,8 @@ const Forecast_Highest_Temp = document.querySelectorAll(".Forecast-Day-Highest-T
 const Forecast_Lowest_Temp = document.querySelectorAll(".Forecast-Day-Lowest-Temp");
 
 
-Forecast_Dates[1].textContent = day1dateArray[2][1] + " " + months[day1dateArray[1]] 
-Forecast_Dates[2].textContent = day2dateArray[2][1] + " " + months[day2dateArray[1]] 
+Forecast_Dates[1].textContent = day1dateArray[2] + " " + months[day1dateArray[1]] 
+Forecast_Dates[2].textContent = day2dateArray[2] + " " + months[day2dateArray[1]] 
 
 for (let i = 0 ; i < Forecast_Images.length ; i++){
 
@@ -194,7 +194,6 @@ Forecast_Images[i].src = forecastday[i].day.condition.icon
 }
 
 for (let i = 0 ; i < 3 ; i++){
-console.log(i)
     Forecast_Highest_Temp[i].textContent = "H: " + Math.round(forecastday[i].day.maxtemp_c) + "°"
     Forecast_Lowest_Temp[i].textContent =  "L: " + Math.round(forecastday[i].day.mintemp_c) + "°"
 }
@@ -203,9 +202,85 @@ console.log(i)
         const CloundsTextDOM = document.querySelector(".CloudsPer")
         const HumidityTextDOM = document.querySelector(".HumidityPer")
         const Humidity_DewPoint_DOM = document.querySelector(".Humidity-DewPoint")
+         //UV-Index
+        const UV_Index = document.querySelector(".UV");
+        const UV_Desc = document.querySelector(".UV_Desc")    
+
+        if (uv >= 3 && uv <=5) {
+                UV_Desc.textContent = "Moderate"
+        } else if (uv >= 6 && uv <=7){
+                UV_Desc.textContent = "High" 
+        } else if (uv >= 8 && uv <=10){
+                UV_Desc.textContent = "Very High"
+        } else if (uv >= 11){
+                UV_Desc.textContent = "Extreme" 
+        } else {
+                UV_Desc.textContent = "Low"
+        }
+
+         //SUNSET OR SUNRISE 
+
+        const SunHeaderDOM = document.querySelector(".Sun_Header")
+        const SunHourDOM = document.querySelector(".SunHour")
+        const SunDescDOM = document.querySelector(".Sun_Desc")
+        const SunRiseHour = forecastday[0].astro.sunrise;
+        const SunSetHour = forecastday[0].astro.sunset;
+        let SunHourSet;
+        let Set_or_Rise; 
+
+         const test = Number(SunSetHour.match(/[a-zA-Z]+|[0-9]+/g)[0]) + SunSetHour.match(/[a-zA-Z]+|[0-9]+/g)[2]
+
+       console.log(test)
+
+        for (let i = 0 ; i < AM_PM_Time.length ; i++){
+                if (AM_PM_Time[i] == test){
+                        SunHourSet  = i;
+                }
+        }
+        if (last_updated_hour > SunHourSet){
+                console.log("The sun already sat")
+                SunHeaderDOM.textContent = "Sunrise"
+                SunHourDOM.textContent = SunRiseHour
+                SunDescDOM.textContent = "Sunset: " + SunSetHour
+        }else{
+                console.log("The sun should set")
+                SunHeaderDOM.textContent = "Sunset"
+                SunHourDOM.textContent = SunSetHour
+                SunDescDOM.textContent = "Sunrise: " + SunRiseHour
+        }
 
 
 
+        //VISIBILITY CONTAINER 
+
+        const Visibility = document.querySelector(".VisibilityKM");
+
+        Visibility.textContent = vis_km + " km"
+        
+        
+
+        //Pressure Container 
+
+        const Pressure = document.querySelector(".PressureNumber")
+        const PressureDesc = document.querySelector(".PressureDesc")
+
+        Pressure.textContent = pressure_mb + "mb"
+
+        if (pressure_mb < 1005){
+                PressureDesc.textContent = "Low"
+        } else if (pressure_mb > 1005 && pressure_mb < 1015){
+                PressureDesc.textContent = "Moderate"
+        } else if (pressure_mb > 1015 && pressure_mb < 1030){
+                PressureDesc.textContent = "High"
+        } else if (pressure_mb > 1050){
+                PressureDesc.textContent = "Very High"
+        }
+ 
+
+
+
+        console.log(pressure_mb)
+        UV_Index.textContent = uv
         Humidity_DewPoint_DOM.textContent = "The dew point is "+ forecastday[0].hour[last_updated_hour].dewpoint_c +"° right now."
         HumidityTextDOM.textContent = humidity + "%"
         CloundsTextDOM.textContent = cloud + "%"

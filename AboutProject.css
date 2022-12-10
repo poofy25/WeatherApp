@@ -1,0 +1,36 @@
+.ProjectPopUp{
+    position: fixed;
+  z-index: 1000;
+    top: 25%;
+    left: 5vw;
+    right: 5vw;
+    width: 90vw;
+    height: 50vh;
+    background-color: rgba(6, 25, 59, 1);
+  border: 1px solid white;
+  border-radius: 5px;
+    transition: 1s ease;
+    padding: 2vw;
+    box-sizing: border-box;
+}
+
+.ProjectHeader{
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(18px,7vw,30px);
+    align-items: center;
+}
+.ProjectHeader > p {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+}
+.X_Button{
+    filter: invert();
+    width: 10vw;
+    height: 10vw;
+margin-right: 0;
+margin-left: auto;
+}
