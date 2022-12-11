@@ -270,19 +270,21 @@ left: 0;
     margin: 0;
     display: flex;
     justify-self: start;
-    
+    width: 50%;
 }
 
 .Forecast-Day-Breaker{
  position:absolute;
  height: 100%;
- right: 16.5vw;
+ right: 20vw;
     width: 1px;
     background-color: rgba(113,121,134);
 }
 
 .Forecast-Day-Lowest-Temp{
     margin: 0;
+    width: 50%;
+    display: flex;
 }
 
 .Forecast-Image{
@@ -343,7 +345,8 @@ left: 0;
         margin: 0;
         padding: 0;
         display: flex;
-        justify-content: center;
+        width: 30%;
+        justify-content: start;
         
         align-items: center;
     }
@@ -355,6 +358,8 @@ left: 0;
     .Precipitation-Day > div {
         display: flex;
         flex-direction: row;
+        width: 35%;
+        justify-content: center;
         
     }
     .Precipitation-Grid > div {
