@@ -58,7 +58,7 @@ body{
         margin-right: auto;
         margin-left:0;
 }
-.SquareHeaderIcon{
+.HeaderIcon{
     filter: contrast(0%);
     width: 5vw;
     aspect-ratio: 1;
@@ -336,8 +336,6 @@ left: 0;
     .Precipitation-Day{
     display: flex;
     flex-direction: row;
-    padding-top: 0.5vh;
-    padding-bottom: 0.5vh;
     }
     .Precipitation-Day p {
         font-size: clamp(15px,5vw,25px);
@@ -351,9 +349,8 @@ left: 0;
         align-items: center;
     }
     .Precipitation-Day  img{
-        width: clamp(20px,8vw,40px);
+        width: clamp(20px,10vw,40px);
         aspect-ratio:1;
-       filter:invert();
     }
     .Precipitation-Day > div {
         display: flex;
@@ -552,37 +549,3 @@ left: 0;
         }
     }
 }
-    /*FOR DESKTOP*/
-    @media screen and (min-width:768px) {
-   
-        .CardContainer-Grid{
-            display: grid;
-          
-            grid-template-columns: repeat(5,1fr);
-            
-            gap: 2.5vw;
-            margin: auto;
-            margin-top: 5vw;
-            width: 90vw;
-            height: auto;
-            backdrop-filter: blur(0.5);
-            border: 1px solid white;
-        }
-        .CardContainer-Grid div {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            height: 250px;
-        }
-        
-        .Span-2{
-            grid-column: span 2;
-        }
-        .Span-3{
-         grid-column: span 3;
-        }
-        .FeelsLike-Container{
-            background-color: red;
-        }
-    }

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="desktopstyles.css">
     </head>
     <body>
    <div class="CardContainer-Grid">
@@ -14,13 +15,13 @@
 <p class="Temperature Summary_P">&deg;C</p>
 <p class="Description Summary_P">Cloudy</p>
 <p class="H-L Summary_P"> H:3 C  L:-1 C</p>
-<p class="LastUpdate Summary_P" style="font-size:clamp(10px,4vw,20px); margin: 0;">Last Updated: 2022-12-01 19:15</p>
+<p class="LastUpdate Summary_P" style="font-size:clamp(8px,1.5vw,20px);">Last Updated: 2022-12-01 19:15</p>
 <p style="margin: 0;font-size:10px;margin-top:0.5rem;opacity:0.5;">*some data may not be accurate*</p>
    </div>
-   <div class="Hourly-Container Span-3"> 
+   <div class="Hourly-Container Span-3 Span-4 Rect-Container"> 
     
-    <div class="Hourly-Container-Header">
-        <img class="SquareHeaderIcon" src="PNGS/Hourly-Clock.png">
+    <div class="Hourly-Container-Header Rect-Header">
+        <img class="HeaderIcon" src="PNGS/Hourly-Clock.png">
         Hourly
     </div>
     
@@ -94,10 +95,10 @@
 
 </div>
 
-   <div class="Forecast-Container Span-2">
+   <div class="Forecast-Container Span-2 Span-3 Rect-Container">
 
-    <div class="Forecast-Container-Header">
-        <img src="PNGS/Forecast-Icon.png" class="SquareHeaderIcon">
+    <div class="Forecast-Container-Header Rect-Header">
+        <img src="PNGS/Forecast-Icon.png" class="HeaderIcon">
         <p>Forecast</p>
     </div>
     <div class="Forecast-Grid">
@@ -140,9 +141,9 @@
 
    </div>
 
-   <div class="Precipitation-Container Span-2">
-    <div class="Precipitation-Header">
-        <img src="PNGS/Precipitation-WaterIcon.png" class="SquareHeaderIcon">
+   <div class="Precipitation-Container Span-2 Span-3 Rect-Container">
+    <div class="Precipitation-Header Rect-Header">
+        <img src="PNGS/Precipitation-WaterIcon.png" class="HeaderIcon">
         Precipitation</div>
 
 <div class="Precipitation-Grid">
@@ -185,7 +186,7 @@
 
    <div class="SquareContainer"> 
     <div class="SquareContainerHeader FeelsLike-Header">
-        <img src="PNGS/FeelsLike-Termometer.png" class="SquareHeaderIcon">
+        <img src="PNGS/FeelsLike-Termometer.png" class="HeaderIcon">
         <p>Feels like</p>
     </div>
     <p class="FeelsLikeTemp">NaN</p>
@@ -193,7 +194,7 @@
 
    <div class="SquareContainer"> 
     <div class="SquareContainerHeader"> 
-        <img src="PNGS/Wind-WindIcon.png" class="SquareHeaderIcon">
+        <img src="PNGS/Wind-WindIcon.png" class="HeaderIcon">
         Wind </div>
     <p class="WindSpeed">8</p>
     <p style="margin:0 ;">km/h</p>
@@ -202,7 +203,7 @@
 
    <div class="SquareContainer"> 
     <div class="SquareContainerHeader"> 
-        <img src="PNGS/Clouds-Clouds.png" class="SquareHeaderIcon">
+        <img src="PNGS/Clouds-Clouds.png" class="HeaderIcon">
         Clouds
     </div>
    <div class="Clouds-Content">
@@ -215,7 +216,7 @@
 
 <div class="SquareContainer"> 
     <div class="SquareContainerHeader"> 
-        <img src="PNGS/Humidity-Icon.png" class="SquareHeaderIcon">
+        <img src="PNGS/Humidity-Icon.png" class="HeaderIcon">
         Humidity
     </div>
     <div class="Humidity-Content">
@@ -226,7 +227,7 @@
 
    <div class="UV_Index SquareContainer">
     <div class="SquareContainerHeader"> 
-        <img src="PNGS/UV_Index_icon.png" class="SquareHeaderIcon">
+        <img src="PNGS/UV_Index_icon.png" class="HeaderIcon">
         UV Index
     </div>
    <div class="UV-Content">
@@ -236,9 +237,9 @@
 </div>
    </div>
 
-   <div class="SquareContainer">  
+   <div class="SquareContainer ">  
      <div class="SquareContainerHeader"> 
-        <img src="PNGS/UV_Index_icon.png" class="SquareHeaderIcon">
+        <img src="PNGS/UV_Index_icon.png" class="HeaderIcon">
        <p style="margin: 0;" class="Sun_Header">NaN</p>
     </div>
     <div class="Sun-Content">
@@ -248,7 +249,7 @@
    </div>
    <div class="SquareContainer">
     <div class="SquareContainerHeader"> 
-        <img src="PNGS/Visibility-Icon.png" class="SquareHeaderIcon">
+        <img src="PNGS/Visibility-Icon.png" class="HeaderIcon">
        Visibility
     </div>
     <div class="Visibility-Content">
@@ -257,7 +258,7 @@
    </div>
    <div class="SquareContainer">
     <div class="SquareContainerHeader"> 
-        <img src="PNGS/Pressure-Icon.png" class="SquareHeaderIcon">
+        <img src="PNGS/Pressure-Icon.png" class="HeaderIcon">
        Pressure
     </div>
     <div class="Pressure-Content">

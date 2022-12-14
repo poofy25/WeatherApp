@@ -1,0 +1,494 @@
+
+ @media screen and (min-width:768px){
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        color: white;
+        background-image: linear-gradient(rgb(88, 111, 146),rgb(32,36,45));
+        padding: 0;
+        font-family: monospace;
+        font-size: 1em;
+        margin: 0;
+    }
+    /*GRID*/
+    .CardContainer-Grid{
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            
+                gap: 2.5vw;
+                margin: auto;
+                margin-top: 5vh;
+                width: 90vw;
+                height: auto;
+                
+                  overflow: hidden;
+        
+        }
+        .Span-2{
+            grid-column: span 3;
+        }
+        .Span-3{
+         grid-column: span 4;
+        }
+        .Span-4{
+            grid-column: span 5;
+        }
+        .SquareContainer{
+            grid-column: span 2;
+        }
+    .CardContainer-Grid > div{
+            border-radius: clamp(5px,5vw,20px);
+            
+            display: flex;
+            align-items: center;
+    }
+        /*CONTAINERS*/
+    .SquareContainer{
+            border-radius: 30px;
+            height: 0.5fr;
+                
+            display: flex;
+            flex-direction: column;
+           padding: 20px;
+           padding-top: 10px;
+           aspect-ratio: 1;
+           overflow: hidden;
+           background-color: rgba(6, 25, 59, 0.5);
+           border: 1px solid rgba(110, 119, 136, .4);
+        }
+    .SquareContainerHeader{
+        display: flex;
+        align-items:center;
+        width: 100%;
+        margin-right: auto;
+        margin-left:0;
+        box-sizing: border-box;
+        color: rgba(113,121,134);
+        font-size: clamp(15px,2vw,30px);
+        font-weight: bolder;
+       
+    }
+    .HeaderIcon{
+        filter: contrast(0%);
+        width: clamp(30px,4vw,60px);
+        aspect-ratio: 1;
+        margin-right: clamp(10px,1vw,25px);
+        box-sizing: border-box;
+    }
+
+    /*Rectangle Containers*/
+
+    .Rect-Container{
+        padding: 2.5vw;
+        padding-top: 1.5vh;
+        padding-bottom: 1.5vh;
+
+          display: flex;
+          flex-direction: column;
+
+            background-color: rgba(6, 25, 59, 0.5);
+            border: 1px solid rgba(110, 119, 136, .4);
+            height: auto;
+            overflow-x: scroll;
+    }
+
+    .Rect-Header{
+        display: flex;
+        align-items:center;
+        width: 100%;
+        margin-right: auto;
+        padding-bottom: 1.5vh;
+        margin-left:0;
+        box-sizing: border-box;
+        color: rgba(113,121,134);
+        font-size: clamp(15px,2vw,30px);
+        font-weight: bolder;
+        border-bottom: 0.5px solid rgba(113,121,134);
+    }
+
+        /*Summary Container*/
+    .Summary-Container{
+            background-color: transparent;
+            height: auto;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            
+            background-color: transparent;
+            overflow: hidden;
+    }
+    
+    .Summary-Container p{
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+            font-size: clamp(20px,4vw,25px);
+    }
+    .Summary-Container .Location{
+            font-size: clamp(25px,4vw,50px);
+            
+    }
+    .Summary-Container .Temperature{
+            font-size: clamp(30px,15vw,50px);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+    }
+   
+    
+    
+    
+        /*Hourly Container*/
+    .Hourly-Container{
+      
+        padding: 2.5vw;
+        padding-top: 1.5vh;
+        padding-bottom: 1.5vh;
+
+          display: flex;
+          flex-direction: column;
+
+            background-color: rgba(6, 25, 59, 0.5);
+            border: 1px solid rgba(110, 119, 136, .4);
+            height: auto;
+            overflow-x: scroll;
+        
+        }
+
+
+        .Hourly-Container-Header{
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+        .Hourly-Container-Grid{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-self: start;
+            margin: auto;
+            margin-top: auto;
+            overflow:hidden;
+            gap:5vw;
+        }
+        .Hourly-Container-Grid > div {
+            width: auto;
+            border: 0px red solid;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+        .Hourly-Temp{
+            font-family: sans-serif;
+            margin: auto;
+            font-size: clamp(10px,6vw,30px);
+        }
+        .Hourly-Time{
+            margin: 0;
+            margin:auto;
+            
+            font-size: clamp(12px,6vw,22.5px);
+        }
+        .Hourly-Container-Grid > div > img {
+            width: clamp(40px,6vw,60px);
+         aspect-ratio: 1;
+         margin: auto;
+         
+     
+        }
+       
+    
+    
+        /*Forecast Container*/
+    
+    .Forecast-Container-Header  p {
+        margin: 0;
+    }
+    
+    .Forecast-Grid{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    
+    }
+    
+    .Forecast-Grid > :nth-child(2){
+        border-top: 0.5px solid rgba(113,121,134) ;
+        border-bottom: 0.5px solid rgba(113,121,134);
+        
+    }
+    
+    .Forecast-Day{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    
+    .Forecast-Date{
+        margin: 0;
+         font-size: clamp(15px,3vw,30px);
+         width: 30%;
+         display: flex;
+    }
+    
+    .H_L-Day{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: clamp(10px,2.5vw,30px);
+        width: 45%;
+        position: relative;
+    }
+    
+    .Forecast-Day-Highest-Temp{
+        margin: 0;
+        display: flex;
+        justify-self: start;
+        width: 50%;
+    }
+    
+    .Forecast-Day-Breaker{
+     position:absolute;
+     height: 100%;
+     right: 9.5vw;
+        width: 1px;
+        background-color: rgba(113,121,134);
+    }
+    
+    .Forecast-Day-Lowest-Temp{
+        margin: 0;
+        width: 50%;
+        display: flex;
+    }
+    
+    .Forecast-Image{
+        width: clamp(40px,6vw,60px);
+        aspect-ratio: 1;
+        margin-right: auto;
+        justify-content: center;
+    }
+    
+    
+    
+    
+        /*Precipitation Container*/
+    
+        .Precipitation-Grid{
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        
+        }
+
+        .Precipitation-Day{
+        display: flex;
+        flex-direction: row;
+        }
+        .Precipitation-Day p:first-child{
+            font-size: clamp(15px,3vw,30px);
+        }
+        .Precipitation-Day p {
+            font-size: clamp(10px,2.5vw,30px);
+         
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 30%;
+            justify-content: start;
+            
+            align-items: center;
+        }
+        .Precipitation-Day  img{
+            width: clamp(40px,6vw,60px);
+            aspect-ratio:1;
+        }
+        .Precipitation-Day > div {
+            display: flex;
+            flex-direction: row;
+            width: 35%;
+            justify-content: center;
+            
+        }
+        .Precipitation-Day:nth-child(2){
+            border-top: 0.5px solid rgba(113,121,134) ;
+            border-bottom: 0.5px solid rgba(113,121,134);
+            
+        }
+       
+        /*FeelsLike Container*/
+        
+        .FeelsLike-Header > p {
+            margin: 0;
+        }
+    
+        .FeelsLikeTemp{
+            margin: auto;
+            margin-top: 0.5vh;
+            margin-left: 0;
+            font-size: clamp(20px,8vw,60px);
+            font-weight: bolder;
+       
+        }
+    
+    
+        /*Wind speed container*/
+    
+    
+        .WindSpeed{
+            margin: auto;
+            margin-top: 2vw;
+            font-size: clamp(15px,7vw,60px);
+            font-weight: bolder;
+            text-align: center;
+         
+        }
+        .Wind-Direction{
+            margin: auto;
+            font-size: clamp(15px,7vw,60px);
+        }
+    
+    
+        /*CLOUNDS CONTAINER*/
+    
+        .Clouds-Content{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            width: 100%;
+        }
+        .Clouds-Content > p {
+            margin: 0;
+            font-size: clamp(15px,8vw,60px) ;
+            
+            font-weight:bolder;
+        }
+        .Clouds-Content > img {
+            width: clamp(20px,15vw,60px);
+            aspect-ratio: 1;
+            filter: invert();
+            
+        }
+        /*Humidity Container*/
+     
+        .Humidity-Content{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            width: 100%;
+            height:100%;
+        }
+        .HumidityPer {
+            margin: 0;
+            margin-top: 0.5vh;
+            font-size: clamp(15px,8vw,60px) ;
+            
+            font-weight:bolder;
+        }
+        .Humidity-DewPoint{
+            margin-top: auto;
+           margin-bottom: 0;
+            font-size: clamp(10px,3.2vw,60px) ;
+        }
+      
+    
+        /*UV index*/
+    
+    
+          .UV-Content{
+            display: flex;
+            flex-direction: column;
+            margin-top: 0.5vh;
+            width: 100%;
+            height:100%;
+          }
+          .UV{
+            margin: 0;
+            font-size: clamp(15px,8vw,60px);
+            font-weight:bolder;
+          }
+          .UV_Desc{
+            margin: 0;
+            font-size: clamp(15px,6vw,40px);
+            font-weight: bold;
+          }
+    
+    
+          /* SUNSET / SUNRISE */
+    
+    
+        .Sun-Content{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            width: 100%;
+            height:100%;
+        }
+        
+        .SunHour{
+            margin: 0;
+            margin-top: 0.5vh;
+            font-size: clamp(15px,6vw,60px) ;
+            
+            font-weight:bolder;
+        }
+    
+        .Sun_Desc{
+            margin-top: auto;
+            margin-bottom: 0;
+             font-size: clamp(10px,3.2vw,60px) ;
+        }
+    
+    
+        /*Visibility Container*/
+    
+        .Visibility-Content{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height:100%;
+        }
+        
+        .VisibilityKM{
+            margin: 0;
+            margin-top: 0.5vh;
+            font-size: clamp(15px,8vw,60px) ;
+            
+            font-weight:bolder;
+        }
+    
+    
+        /*Pressure Container*/
+    
+         .Pressure-Content{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height:100%;
+         }
+    
+        .PressureNumber{
+            margin: 0;
+            margin-top: 0.5vh;
+            font-size: clamp(15px,7vw,60px);
+            font-weight:bolder;
+        }
+    
+        .PressureDesc{
+            margin: 0;
+            font-size: clamp(15px,6vw,40px);
+            font-weight: bold;
+        }
+    
+    
+    
+    
+    
+    }
