@@ -65,6 +65,26 @@ body{
     margin-right: 2vw;
     box-sizing: border-box;
 }
+
+
+.Rect-Header{
+ 
+    display: flex;
+    align-items:center;
+    width: 100%;
+    margin-right: auto;
+    padding-bottom: 1.5vh;
+    margin-left:0;
+    box-sizing: border-box;
+    color: rgba(113,121,134);
+    font-size: clamp(12px,4vw,30px);
+    font-weight: bolder;
+    border-bottom: 0.5px solid rgba(113,121,134);
+
+}
+
+
+
     /*Summary Container*/
 .Summary-Container{
         background-color: transparent;
@@ -132,7 +152,7 @@ body{
         margin-bottom: 1vh;
         box-sizing: border-box;
         color: rgba(113,121,134);
-        font-size: clamp(15px,2vw,30px);
+        font-size: clamp(12px,4vw,30px);
         font-weight: bolder;
         border-bottom: 0.5px solid rgba(113,121,134);
     }
@@ -195,32 +215,7 @@ border: 1px solid rgba(110, 119, 136, .4);
 
 }
 
-.Forecast-Container-Header{
 
-position: -webkit-sticky; /* Safari */
-position: sticky;
-top: 0;
-left: 0;
-
-    display: flex;
-    align-items:center;
-      
-        margin-right: auto;
-        margin-left:0;
-        margin-top: 0;
-        
-
-        padding-bottom: 1vh;
-        width: 100%;
-
-        box-sizing: border-box;
-        color: rgba(113,121,134);
-       
-
-        font-size: clamp(15px,2vw,30px);
-        font-weight: bolder;
-        border-bottom: 0.5px solid rgba(113,121,134);
-}
 
 .Forecast-Container-Header  p {
     margin: 0;
@@ -310,18 +305,6 @@ left: 0;
         padding-bottom: 1.5vh;
         overflow: hidden;
     }
-    .Precipitation-Header{
-        display: flex;
-        flex-direction: row;
-        align-items:center;
-        justify-self: center;
-        margin-right: auto;
-        margin-left:0;
-
-        color: rgba(113,121,134);
-        font-size: clamp(15px,2vw,30px);
-        
-    }
     .Precipitation-Grid{
         text-align: start;
         display: flex;
@@ -329,7 +312,6 @@ left: 0;
         height: 100%;
         width: 100%;
         padding-left: 5vw;
-        padding-top: 2.5vw;
         padding-right: 5vw;
 
     }
@@ -364,11 +346,14 @@ left: 0;
         display: flex;
         justify-content:space-between;
         align-items: center;
-        border-top: .25px solid rgba(113,121,134);
         width: 100%;
         
     }
-   
+    .Precipitation-Day:nth-child(2){
+        border-top: 0.5px solid rgba(113,121,134) ;
+        border-bottom: 0.5px solid rgba(113,121,134);
+        
+    }
     /*FeelsLike Container*/
     
     .FeelsLike-Header > p {
@@ -390,15 +375,24 @@ left: 0;
 
     .WindSpeed{
         margin: auto;
-        margin-top: 2vw;
-        font-size: clamp(15px,7vw,60px);
-        font-weight: bolder;
-        text-align: center;
+        margin-left: 0;
+        margin-top: 0.5vh;
+        font-size: clamp(15px,8vw,60px);
+        font-weight: bold;
      
     }
+    .WindSpeedKMH{
+        margin: auto;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: clamp(10px,3.2vw,60px) ;
+     }
     .Wind-Direction{
         margin: auto;
-        font-size: clamp(15px,7vw,60px);
+        font-size: clamp(15px,6vw,60px);
+        margin-left: 0;
+
     }
 
 
@@ -412,6 +406,7 @@ left: 0;
     }
     .Clouds-Content > p {
         margin: 0;
+        margin-top: 0.5vh;
         font-size: clamp(15px,8vw,60px) ;
         
         font-weight:bolder;
@@ -434,7 +429,7 @@ left: 0;
     .HumidityPer {
         margin: 0;
         margin-top: 0.5vh;
-        font-size: clamp(15px,8vw,60px) ;
+        font-size: clamp(15px,8vw,60px);
         
         font-weight:bolder;
     }
@@ -481,7 +476,7 @@ left: 0;
     .SunHour{
         margin: 0;
         margin-top: 0.5vh;
-        font-size: clamp(15px,6vw,60px) ;
+        font-size: clamp(15px,6vw,60px);
         
         font-weight:bolder;
     }
@@ -505,7 +500,7 @@ left: 0;
     .VisibilityKM{
         margin: 0;
         margin-top: 0.5vh;
-        font-size: clamp(15px,8vw,60px) ;
+        font-size: clamp(15px,8vw,60px);
         
         font-weight:bolder;
     }
@@ -523,13 +518,13 @@ left: 0;
     .PressureNumber{
         margin: 0;
         margin-top: 0.5vh;
-        font-size: clamp(15px,7vw,60px);
-        font-weight:bolder;
+        font-size: clamp(15px,8vw,60px);
+        font-weight:bold;
     }
 
     .PressureDesc{
         margin: 0;
-        font-size: clamp(15px,6vw,40px);
+        font-size: clamp(12px,5vw,40px);
         font-weight: bold;
     }
 

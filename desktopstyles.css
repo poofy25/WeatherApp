@@ -10,6 +10,8 @@
         font-family: monospace;
         font-size: 1em;
         margin: 0;
+    
+        
     }
     /*GRID*/
     .CardContainer-Grid{
@@ -51,12 +53,14 @@
                 
             display: flex;
             flex-direction: column;
-           padding: 20px;
-           padding-top: 10px;
+            padding: 2.5vw;
+            padding-top: 1.5vw;
+            padding-bottom: 2vw;
            aspect-ratio: 1;
            overflow: hidden;
            background-color: rgba(6, 25, 59, 0.5);
            border: 1px solid rgba(110, 119, 136, .4);
+           
         }
     .SquareContainerHeader{
         display: flex;
@@ -66,7 +70,7 @@
         margin-left:0;
         box-sizing: border-box;
         color: rgba(113,121,134);
-        font-size: clamp(15px,2vw,30px);
+        font-size: clamp(14px,1.5vw,28px);
         font-weight: bolder;
        
     }
@@ -91,7 +95,7 @@
             background-color: rgba(6, 25, 59, 0.5);
             border: 1px solid rgba(110, 119, 136, .4);
             height: auto;
-            overflow-x: scroll;
+            overflow: hidden;
     }
 
     .Rect-Header{
@@ -154,6 +158,27 @@
             overflow-x: scroll;
         
         }
+
+        .Hourly-Container::-webkit-scrollbar {
+           height: 10px;
+          }
+          
+          /* Track */
+          .Hourly-Container::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          
+          /* Handle */
+          .Hourly-Container::-webkit-scrollbar-thumb {
+            background: rgba(6, 25, 59, .5);
+            border-radius: 20px;
+          }
+          
+          /* Handle on hover */
+          .Hourly-Container::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 25, 59, 1);
+          }
+
 
 
         .Hourly-Container-Header{
@@ -242,7 +267,7 @@
         flex-direction: row;
         justify-content: space-between;
         font-size: clamp(10px,2.5vw,30px);
-        width: 45%;
+        width: 50%;
         position: relative;
     }
     
@@ -253,13 +278,7 @@
         width: 50%;
     }
     
-    .Forecast-Day-Breaker{
-     position:absolute;
-     height: 100%;
-     right: 9.5vw;
-        width: 1px;
-        background-color: rgba(113,121,134);
-    }
+
     
     .Forecast-Day-Lowest-Temp{
         margin: 0;
@@ -333,28 +352,39 @@
             margin: auto;
             margin-top: 0.5vh;
             margin-left: 0;
-            font-size: clamp(20px,8vw,60px);
+            font-size: clamp(18px,4vw,50px);
             font-weight: bolder;
        
         }
     
-    
+        .FeelsLike-Header > img {
+                 aspect-ratio: 0; 
+                 height: clamp(30px,4vw,60px);
+                 width: auto;
+                 margin-right: clamp(10px,1vw,25px);
+        }
         /*Wind speed container*/
     
     
         .WindSpeed{
             margin: auto;
-            margin-top: 2vw;
-            font-size: clamp(15px,7vw,60px);
+            margin-left: 0;
+            margin-top: 0.5vh;
+            font-size: clamp(18px,4vw,50px);
             font-weight: bolder;
-            text-align: center;
-         
+            
+            
         }
         .Wind-Direction{
             margin: auto;
-            font-size: clamp(15px,7vw,60px);
+            margin-left: 0;
+            font-size: clamp(15px,3vw,32px);
         }
-    
+        .WindSpeedKMH{
+           margin: auto;
+           margin-left: 0;
+          
+        }
     
         /*CLOUNDS CONTAINER*/
     
@@ -366,9 +396,10 @@
         }
         .Clouds-Content > p {
             margin: 0;
-            font-size: clamp(15px,8vw,60px) ;
+            font-size: clamp(18px,4vw,50px);
             
             font-weight:bolder;
+            margin-top: 0.5vh;
         }
         .Clouds-Content > img {
             width: clamp(20px,15vw,60px);
@@ -388,14 +419,14 @@
         .HumidityPer {
             margin: 0;
             margin-top: 0.5vh;
-            font-size: clamp(15px,8vw,60px) ;
+           font-size: clamp(18px,4vw,50px);
             
             font-weight:bolder;
         }
         .Humidity-DewPoint{
             margin-top: auto;
            margin-bottom: 0;
-            font-size: clamp(10px,3.2vw,60px) ;
+           font-size: clamp(10px,1.5vw,20px);
         }
       
     
@@ -411,12 +442,12 @@
           }
           .UV{
             margin: 0;
-            font-size: clamp(15px,8vw,60px);
+            font-size: clamp(18px,4vw,50px);
             font-weight:bolder;
           }
           .UV_Desc{
             margin: 0;
-            font-size: clamp(15px,6vw,40px);
+            font-size: clamp(15px,3vw,32px);
             font-weight: bold;
           }
     
@@ -435,7 +466,7 @@
         .SunHour{
             margin: 0;
             margin-top: 0.5vh;
-            font-size: clamp(15px,6vw,60px) ;
+            font-size: clamp(15px,3vw,46px);
             
             font-weight:bolder;
         }
@@ -443,7 +474,7 @@
         .Sun_Desc{
             margin-top: auto;
             margin-bottom: 0;
-             font-size: clamp(10px,3.2vw,60px) ;
+            font-size: clamp(10px,1.5vw,20px);
         }
     
     
@@ -459,7 +490,7 @@
         .VisibilityKM{
             margin: 0;
             margin-top: 0.5vh;
-            font-size: clamp(15px,8vw,60px) ;
+            font-size: clamp(18px,4vw,50px);
             
             font-weight:bolder;
         }
@@ -477,13 +508,13 @@
         .PressureNumber{
             margin: 0;
             margin-top: 0.5vh;
-            font-size: clamp(15px,7vw,60px);
-            font-weight:bolder;
+            font-size: clamp(18px,4vw,50px);
+            font-weight:bold;
         }
     
         .PressureDesc{
             margin: 0;
-            font-size: clamp(15px,6vw,40px);
+            font-size: clamp(15px,3vw,32px);
             font-weight: bold;
         }
     
