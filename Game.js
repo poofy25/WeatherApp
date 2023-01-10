@@ -58,7 +58,12 @@ fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${lat}%2C${long}&da
         let day2dateraw = forecastday[2].date 
         const day1dateArray = day1dateraw.split("-");
         const day2dateArray = day2dateraw.split("-");
-        
+        if (day1dateArray[1][0] == "0") {
+                day1dateArray[1] = day1dateArray[1][1].replace(/0+$/, '');
+                day2dateArray[1] = day2dateArray[1][1].replace(/0+$/, '');
+                console.log(day1dateArray)
+        }
+        //console.log(day1dateArray[1][0])
        
         const months = ["None" , "Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"];
         const AM_PM_Time =
